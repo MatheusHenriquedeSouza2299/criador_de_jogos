@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Apostas - Mega da Virada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Apostas - Mega da Virada</h1>
+    </header>
+    <main>
+        <form id="formAposta">
+            <!-- Seção de Upload do CSV -->
+            <div>
+                <label for="csvFile">Faça o upload do arquivo CSV com os resultados:</label>
+                <input type="file" id="csvFile" accept=".csv" required>
+            </div>
+
+            <!-- Seção de quantidade de jogos -->
+            <div>
+                <label for="quantidadeJogos">Quantos jogos você quer jogar?</label>
+                <input type="number" id="quantidadeJogos" min="1" value="1" required>
+            </div>
+
+            <!-- Seção de quantidade de números -->
+            <div>
+                <label for="quantidadeNumeros">Quantos números você quer jogar?</label>
+                <select id="quantidadeNumeros">
+                    <option value="6">6 Números - R$ 5,00</option>
+                    <option value="7">7 Números - R$ 35,00</option>
+                    <option value="8">8 Números - R$ 140,00</option>
+                    <option value="9">9 Números - R$ 420,00</option>
+                    <option value="10">10 Números - R$ 1.050,00</option>
+                    <option value="11">11 Números - R$ 2.310,00</option>
+                    <option value="12">12 Números - R$ 4.620,00</option>
+                    <option value="13">13 Números - R$ 8.580,00</option>
+                    <option value="14">14 Números - R$ 15.015,00</option>
+                    <option value="15">15 Números - R$ 25.025,00</option>
+                    <option value="16">16 Números - R$ 40.040,00</option>
+                    <option value="17">17 Números - R$ 61.880,00</option>
+                    <option value="18">18 Números - R$ 92.820,00</option>
+                    <option value="19">19 Números - R$ 135.660,00</option>
+                    <option value="20">20 Números - R$ 193.800,00</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="calcularValor()">Calcular Valor Total</button>
+        </form>
+
+        <!-- Exibição da Tabela de Frequências -->
+<table id="tabelaFrequencias" border="1">
+    <thead>
+        <tr>
+            <th>Número</th>
+            <th>Frequência</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- As frequências serão exibidas aqui -->
+    </tbody>
+</table>
+
+        <!-- Resultados da Aposta e Sugestões de Números -->
+        <div id="resultado">
+            <h3>Valor Total da Aposta:</h3>
+            <p id="valorTotal">R$ 0,00</p>
+            <h3>Sugestões de Aposta Baseada nos Últimos Jogos:</h3>
+            <div id="sugestoes"></div>
+        </div>
+
+        <a href="home.php">Voltar para a Home</a>
+    
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
